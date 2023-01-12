@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ParkinsAPP - LogIn</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a  class="Title_Park"><h3>ParkinsAPP</h3></a>
+        <a href="index.html" >Inicio</a>
+        <a href="medicos.html" id="medicosBar">Medicos</a>
+        <a href="index.html" id="close" onclick="closeSession()">Cerrar Sesion</a>
+        <a href="#" class="active" id="loginBar">LogIn</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="loginForm">
+        <div class="square">
+            <h2>Inicio de Sesion</h2>
+            <h2>(Solo para medicos)</h2>
+            <br>
+            <br>
+            <div class="body_form">
+                <div class="formulario">
+                    <label>Correo electronico:</label>
+                    <br>
+                    <input type="email" name="" id="correo_medico">
+                    <br>
+                    <label>Password:</label>
+                    <br>
+                    <input type="password" name="" id="pass_medico">
+                    <br>
+                    <br>
+                    <button onclick="logIn()">Entrar</button>
+                </div>
+                <div class="img_container">
+                    <img src="assets/doctor.png">
+                </div>
+                
+            </div>
+            <div class="register">
+                <br>
+                <label>Aun no tienes cuenta? Registrate <a href="#registrate">aqui.</a></label>
+            </div>
+            
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>

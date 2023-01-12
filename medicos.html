@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ParkinsAPP - LogIn</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a  class="Title_Park"><h3>ParkinsAPP</h3></a>
+        <a href="index.html" >Inicio</a>
+        <a href="#" class="active" id="medicosBar">Medicos</a>
+        <a href="index.html" id="close" onclick="closeSession()" >Cerrar Sesion</a>
+        <a href="login.html"  id="loginBar">LogIn</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="container_medico">
+        <div class="datos_medico">
+            <img src="assets/doctor.png" width="200vw">
+            <br>
+            <h3 id="nombre"></h3>
+            <br>
+            <h3 id="apellidos"></h3>
+            <br>
+            <h3 id="numero"></h3>
+            <br>
+            <h3 id="correo"></h3>
+            <br>
+            <h3 id="cedula"></h3>
+        </div>
+        <div class="datos_pacientes">
+            <h2>Pacientes</h2>
+            <br>
+            <br>
+            <div id = "pacientes_container" class="pacientes_container">
+                    
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/script.js"></script>
+    <script type="module" src="./js/medicos.js"></script>
+</body>
+</html>
