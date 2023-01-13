@@ -186,4 +186,85 @@ function closeSession(){
     sessionStorage.clear();
 }
 
+//Funcion que sirve para graficar y leer csv, falta leer archivo desde drive
+function leerCsv(){
+    let angulos = [];
+    let labels = [];
+    Papa.parse("../assets/out.csv",{
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results){
+            
+            console.log(results);
+            results.data.forEach(element => {
+                angulos.push(parseFloat(element.Angulos).toFixed(2));
+                labels.push(parseFloat(element.Tiempo).toFixed(2));
+            });
+
+            
+        }
+    });
+
+    const ctx = document.getElementById('myChart');
+    console.log(labels);
+    console.log(angulos);
+    let myChart = new Chart(ctx,{
+        type:"line",
+        data:{
+            labels: labels,
+            datasets:[{
+                label: "Angulos",
+                data: angulos,
+                fill: false,
+            }]
+        }
+    });
+
+}
+
+async function hola(){
+    //https://www.googleapis.com/drive/v3/files/{fileId}?alt=media&key={APIKey}
+    //https://www.googleapis.com/drive/v3/files/1CIeB0C8k5exJvAOC6g-Vb4Vo9eHoCRqG
+    let peticion = await fetch('https://www.googleapis.com/drive/v3/files/1CIeB0C8k5exJvAOC6g-Vb4Vo9eHoCRqG?alt=media&key=AIzaSyAWcWx3H-TNL-pEXd_dtnGdjZ21hsBF5e8')
+    .then((res) => { return res.blob(); })
+    .then((data) => {
+        let angulos = [];
+        let labels = [];
+        Papa.parse(data,{
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results){
+            
+            console.log(results);
+            results.data.forEach(element => {
+                angulos.push(parseFloat(element.Angulos).toFixed(2));
+                labels.push(parseFloat(element.Tiempo).toFixed(2));
+        });
+
+            
+        }
+        });
+        const ctx = document.getElementById('myChart');
+        console.log(labels);
+        console.log(angulos);
+        let myChart = new Chart(ctx,{
+            type:"line",
+            data:{
+                labels: labels,
+                datasets:[{
+                    label: "Angulos",
+                    data: angulos,
+                    fill: false,
+                }]
+            }
+        });
+    });
+
+}
+
+hola();
 isSessionOn();
+//leerCsv();
+
