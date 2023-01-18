@@ -48,5 +48,72 @@ const pacientes = async () => {
         .catch( error => console.error('Error:', error))
 }
 
+
+async function mostarGraficas(){
+
+    let peticion = await fetch('http://localhost:3000/api/get-access-token?nombre=ADR7315res.csv'
+    )
+    .then((res) =>  res.json())
+    .then((data) =>  data.id)
+    .then(async (id) => {
+        let peticion2 = await fetch('https://www.googleapis.com/drive/v3/files/'+id+'?alt=media&key=AIzaSyAWcWx3H-TNL-pEXd_dtnGdjZ21hsBF5e8')
+        .then((res) => { return res.blob(); })
+        .then((data) => {
+            let angulos = [];
+            let labels = [];
+            Papa.parse(data,{
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete: async function(results){
+                    
+                    console.log(results);
+                    await results.data.forEach(element => {
+                        angulos.push(parseFloat(element.AnguloRodillaDerecha).toFixed(2));
+                        labels.push(parseFloat(element.Tiempo).toFixed(2));
+                    });
+
+                    const ctx = document.getElementById('myChart');
+                    console.log(labels);
+                    console.log(angulos);
+                    
+                    new Chart(ctx,{
+                        type:"line",
+                        data:{
+                            labels: labels,
+                            datasets:[{
+                                label: "Angulos",
+                                data: angulos,
+                                fill: false,
+                            }]
+                        }
+                    });
+                }
+            });
+        });
+    })
+}
+
+function init(){
+    const padre = document.getElementById('pacientes_container');
+    const grafica = document.getElementById('myChart');
+    padre.addEventListener('click', (event) => {
+        if(event.target.id === 'paciente_square' || event.target.parentElement.id  === 'paciente_square'){
+            const hijos = padre.children;
+            for (const hijo of hijos) {
+               if(hijo.id === 'paciente_square'){
+                    hijo.style.display = 'none';
+               }
+            }
+            grafica.style.display = 'block';
+            mostarGraficas();
+        }
+
+        
+        
+    })
+}
+
+init();
 esMedico();
 pacientes();
