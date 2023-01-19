@@ -22,6 +22,39 @@ body{
     justify-content: space-around;
 }
 
+.pacientes_container canvas{
+    display: none;
+    
+}
+
+.pacientes_container .botones{
+    display: none;
+}
+
+.pacientes_container .botones{
+    display: none;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 5vw;
+}
+.botones button{
+    margin-right: 1vw;
+    width: 15%;
+    height: 150%;
+    background-color: whitesmoke;
+    border: 2px solid  #32BEA6;
+    border-radius: 6px;
+}
+
+.botones button:hover{
+    cursor: pointer;
+    background-color: rgba(245, 245, 245, 0.69);
+}
+
 .container_medico{
     width: 98%;
     height: 100%;

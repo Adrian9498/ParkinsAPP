@@ -41,13 +41,25 @@
             <h3 id="cedula"></h3>
         </div>
         <div class="datos_pacientes">
-            <h2>Pacientes</h2>
+            <h2 id = "pacienteh2">Pacientes</h2>
             <br>
             <br>
             <div id = "pacientes_container" class="pacientes_container">
-                <canvas id="myChart">
-
-                </canvas>
+                <div class="botones" id="botones">
+                    <button ref="rodillaD" id="start_button" onclick="ocultarGrafica(this)">Rodilla D</button>
+                    <button ref="rodillaI" onclick="ocultarGrafica(this)">Rodilla I</button>
+                    <button ref="pieD" onclick="ocultarGrafica(this)">Pie D</button>
+                    <button ref="pieI" onclick="ocultarGrafica(this)">Pie I</button>
+                    <button ref="tobilloD" onclick="ocultarGrafica(this)">Tobillo D</button>
+                    <button ref="tobilloI" onclick="ocultarGrafica(this)">Tobillo I</button>
+                </div>
+                
+                <canvas style="background-color: white;"id="rodillaD"></canvas>
+                <canvas style="background-color: white;"id="rodillaI"></canvas>
+                <canvas style="background-color: white;"id="pieD"></canvas>
+                <canvas style="background-color: white;"id="pieI"></canvas>
+                <canvas style="background-color: white;"id="tobilloD"></canvas>
+                <canvas style="background-color: white;"id="tobilloI"></canvas>
             </div>
         </div>
     </div>

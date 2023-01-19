@@ -1,0 +1,17 @@
+{
+    "name":"ParkinssAPP",
+    "short_name":"ParkinssAPP",
+    "start_url":"./index.html",
+    "icons": [
+        {
+            "src":"./assets/icono.png",
+            "sizes":"512x512",
+            "type":"image/png",
+            "purpose":"maskable any"
+        }
+    ],
+    "theme_color":"#FFFFFF",
+    "background_color":"#FFFFFF",
+    "display":"fullscreen",
+    "orientation":"portrait"
+}

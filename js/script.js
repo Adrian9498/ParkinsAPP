@@ -189,6 +189,19 @@ function closeSession(){
     sessionStorage.clear();
 }
 
+function ocultarGrafica(element){
+    
+    let nombre = element.getAttribute("ref");
+    let graficaVisible = document.getElementById(nombre);
+    let botones = document.getElementById("botones")
+    let padre = document.getElementById("pacientes_container");
+    for(const hijo of padre.children){
+        hijo.style.display = 'none';
+    }
+    botones.style.display = 'flex';
+    graficaVisible.style.display = "flex";
+}
+
 isSessionOn();
 
 
