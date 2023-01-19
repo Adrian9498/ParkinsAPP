@@ -60,12 +60,13 @@ const pacientes = async () => {
 async function mostarGraficas(clave){
     const botones = document.getElementById("botones");
     botones.style.display = 'flex';
+    mostrarEspera("Obteniendo graficas..");
     let peticion = await fetch('https://parkinsonapi-production.up.railway.app/api/get-access-token?nombre='+clave+'res.csv'
     )
     .then((res) =>  res.json())
     .then((data) =>  data.id)
     .then(async (id) => {
-        if(id == ""){console.log("No hay archivos"); return;}
+        if(id == ""){cerrarMensaje();  mostrarAlerta("Upps", "No se encontraron mediciones", "error"); return;}
         let peticion2 = await fetch('https://www.googleapis.com/drive/v3/files/'+id+'?alt=media&key=AIzaSyAWcWx3H-TNL-pEXd_dtnGdjZ21hsBF5e8')
         .then((res) => { return res.blob(); })
         .then((data) => {
@@ -182,6 +183,7 @@ async function mostarGraficas(clave){
                         }
                     });
                     document.getElementById("start_button").click();
+                    cerrarMensaje();
                 }
             });
         });

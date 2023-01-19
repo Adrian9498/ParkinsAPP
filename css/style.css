@@ -267,9 +267,10 @@ body{
 }
 .formulario input{
     width: 20vw;
-    height: 3vh;
+    height: 4vh;
     border-radius: 5px;
     border: 10px;
+    font-size: 20px;
 }
 
 .formulario button{
@@ -284,7 +285,9 @@ body{
 
 .formulario button:hover{
     background-color: #7C7C7C;
-    color:#D5E8DC
+    color:#D5E8DC;
+    cursor: pointer;
+    
 }
 
 .body_form{

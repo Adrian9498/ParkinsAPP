@@ -8,7 +8,8 @@ async function logIn(){
         object[key] = value;
     });
 
-    let jsona = JSON.stringify(object);;
+    let jsona = JSON.stringify(object);
+    mostrarEspera("Iniciando sesión..");
     await fetch("https://parkinsonapi-production.up.railway.app/api/login",{
         method: 'POST',
         headers: {
@@ -19,6 +20,8 @@ async function logIn(){
         .then(res => res.json())
         .catch( error => console.error('Error:', error))
         .then( data => {
+
+            cerrarMensaje();
             console.log(data[0]);
             
             if(data.length > 0){
@@ -31,7 +34,7 @@ async function logIn(){
                 window.location.href = 'medicos.html';
                 return;
             }
-            console.log("Adios");
+            mostrarAlerta("Upps", "Revisa tus credenciales", "error");
         })
         .catch( error => console.error('Error:', error))
 }
