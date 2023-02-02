@@ -192,6 +192,7 @@ function closeSession(){
 function ocultarGrafica(element){
     
     let nombre = element.getAttribute("ref");
+   
     let graficaVisible = document.getElementById(nombre);
     let botones = document.getElementById("botones")
     let padre = document.getElementById("pacientes_container");
@@ -200,6 +201,7 @@ function ocultarGrafica(element){
     }
     botones.style.display = 'flex';
     graficaVisible.style.display = "flex";
+    document.querySelector('.fa-arrow-left').setAttribute('ref',nombre);
 }
 
 isSessionOn();

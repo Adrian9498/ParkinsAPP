@@ -6,6 +6,13 @@ let angulos_pie_izquierdo = [];
 let angulos_tobillo_derecho = [];
 let angulos_tobillo_izquierdo = [];
 
+let graph1;
+let graph2;
+let graph3;
+let graph4;
+let graph5;
+let graph6;
+
 const esMedico = () =>{
     const medico = sessionStorage.getItem('cedula_medico');
     
@@ -60,13 +67,31 @@ const pacientes = async () => {
 async function mostarGraficas(clave){
     const botones = document.getElementById("botones");
     botones.style.display = 'flex';
+    const arrow = document.querySelector('.fa-arrow-left');
+    arrow.style.display = "flex";
     mostrarEspera("Obteniendo graficas..");
     let peticion = await fetch('https://parkinsonapi-production.up.railway.app/api/get-access-token?nombre='+clave+'res.csv'
     )
     .then((res) =>  res.json())
     .then((data) =>  data.id)
     .then(async (id) => {
-        if(id == ""){cerrarMensaje();  mostrarAlerta("Upps", "No se encontraron mediciones", "error"); return;}
+        if(id == ""){
+            cerrarMensaje();  
+            mostrarAlerta("Upps", "No se encontraron mediciones", "error");
+            const padre = document.getElementById('pacientes_container');
+            const hijos = padre.children;
+            
+            for (const hijo of hijos) {
+               if(hijo.id === 'paciente_square'){
+                    hijo.style= '';
+               }
+            }
+            botones.style = '';
+            arrow.style.display = "";
+            let achedos = document.getElementById('pacienteh2');
+            achedos.innerHTML = "Pacientes";
+            return;
+        }
         let peticion2 = await fetch('https://www.googleapis.com/drive/v3/files/'+id+'?alt=media&key=AIzaSyAWcWx3H-TNL-pEXd_dtnGdjZ21hsBF5e8')
         .then((res) => { return res.blob(); })
         .then((data) => {
@@ -96,7 +121,7 @@ async function mostarGraficas(clave){
                     const tobilloI = document.getElementById('tobilloI');
                    
                     
-                    new Chart(rodillaD,{
+                    graph1 = new Chart(rodillaD,{
                         type:"line",
                         data:{
                             labels: tiempo,
@@ -110,7 +135,7 @@ async function mostarGraficas(clave){
                         }
                     });
 
-                    new Chart(rodillaI,{
+                    graph2 = new Chart(rodillaI,{
                         type:"line",
                         data:{
                             labels: tiempo,
@@ -124,7 +149,7 @@ async function mostarGraficas(clave){
                         }
                     });
 
-                    new Chart(pieD,{
+                    graph3 = new Chart(pieD,{
                         type:"line",
                         data:{
                             labels: tiempo,
@@ -139,7 +164,7 @@ async function mostarGraficas(clave){
                         }
                     });
 
-                    new Chart(pieI,{
+                    graph4 = new Chart(pieI,{
                         type:"line",
                         data:{
                             labels: tiempo,
@@ -154,7 +179,7 @@ async function mostarGraficas(clave){
                         }
                     });
 
-                    new Chart(tobilloD,{
+                    graph5 = new Chart(tobilloD,{
                         type:"line",
                         data:{
                             labels: tiempo,
@@ -169,7 +194,7 @@ async function mostarGraficas(clave){
                         }
                     });
 
-                    new Chart(tobilloI,{
+                    graph6 = new Chart(tobilloI,{
                         type:"line",
                         data:{
                             labels: tiempo,
@@ -188,6 +213,37 @@ async function mostarGraficas(clave){
             });
         });
     })
+}
+
+const regresarPacientes = (element) =>{
+    const botones = document.getElementById("botones");
+    const arrow = document.querySelector('.fa-arrow-left');
+    const padre = document.getElementById('pacientes_container');
+    const hijos = padre.children;
+    let achedos = document.getElementById('pacienteh2');
+    let grafica = document.getElementById(element.getAttribute("ref"));
+    let graficas  = [graph1,graph2,graph3,graph4,graph5,graph6]; 
+    grafica.style.display = "none";    
+    for (const hijo of hijos) {
+        if(hijo.id === 'paciente_square'){
+            hijo.style= '';
+        }
+    }
+    botones.style = '';
+    arrow.style.display = "";
+
+    for (const graph of graficas) {
+        graph.destroy();
+    }
+   
+    tiempo = [];
+    angulos_rodilla_derecha = [];
+    angulos_rodilla_izquierda = [];
+    angulos_pie_derecho = [];
+    angulos_pie_izquierdo = [];
+    angulos_tobillo_derecho = [];
+    angulos_tobillo_izquierdo = [];
+    achedos.innerHTML = "Pacientes";
 }
 
 function init(){

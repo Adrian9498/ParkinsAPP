@@ -12,6 +12,33 @@ body{
     margin-right: 70%;
 }
 
+.return_titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width : 100%;
+}
+
+.return_titulo i{
+    display: flex;
+    justify-content: center;
+    width: 10%;
+    font-size: 2vw;
+    display: none;
+    color: #8ec8fb;
+}
+
+.return_titulo i:hover{
+    color: #fb928e;
+    cursor: pointer;
+}
+
+.return_titulo h2{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
 .container{
     width: 100%;
     height: 100vh;
@@ -132,6 +159,19 @@ body{
 #img__sensor{
     width: 50%;
     height: 40%;
+}
+
+.perifericos{
+    display: flex; 
+    flex-flow: row; 
+    width: 100%; 
+    height: 40%; 
+    justify-content: center;
+}
+
+#img__periferico{
+    width: 100%;
+    height:100%;
 }
 
 .tabla__sensor{
@@ -327,6 +367,12 @@ body{
     }
 }
 @media (max-width: 900px){
+
+    #img__periferico{
+        width: 40%;
+        height:500%;
+    }
+    
     .datos_medico{
         display: flex;
         width: 98%;
