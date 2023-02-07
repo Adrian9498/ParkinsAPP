@@ -204,6 +204,56 @@ function ocultarGrafica(element){
     document.querySelector('.fa-arrow-left').setAttribute('ref',nombre);
 }
 
+async function register(){
+    let object = {};
+    datos = new FormData();
+    datos.append("correo",document.getElementById("correo_medico").value);
+    datos.append("password",document.getElementById("pass_medico").value);
+    datos.append("nombre",document.getElementById("nombre_medico").value);
+    datos.append("apellidos",document.getElementById("apellidos_medico").value);
+    datos.append("cedula",document.getElementById("cedula_medico").value);
+    datos.append("telefono",document.getElementById("numero_medico").value);
+
+    if(document.getElementById("correo_medico").value == ""
+        ||document.getElementById("pass_medico").value == ""
+        ||document.getElementById("nombre_medico").value == ""
+        ||document.getElementById("apellidos_medico").value == ""
+        ||document.getElementById("cedula_medico").value == ""
+        ||document.getElementById("numero_medico").value == ""){
+        mostrarAlerta("Upps", "Revisa tus datos", "error");
+        return;
+    }
+
+    datos.forEach((value,key) => {
+        object[key] = value;
+    });
+
+    let jsona = JSON.stringify(object);
+    mostrarEspera("Iniciando sesión..");
+    await fetch("https://parkinsonapi-production.up.railway.app/api/createDoctor",{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body:jsona,
+    })
+        .then(res => res.json())
+        .catch( error => console.error('Error:', error))
+        .then( data => {
+
+            cerrarMensaje();
+            console.log(data.id_doctor);
+            
+            if(data.id_doctor){
+                mostrarAlerta("Info", "Se creo tu registro", "info");
+                window.location.href = 'login.html';
+                return;
+            }
+            mostrarAlerta("Upps", "Revisa tus datos", "error");
+        })
+        .catch( error => console.error('Error:', error))
+}
+
 isSessionOn();
 
 

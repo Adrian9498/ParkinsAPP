@@ -24,9 +24,9 @@
         </a>
     </div>
 
-    <div class="loginForm">
-        <div class="square">
-            <h2>Inicio de Sesion</h2>
+    <div class="loginForm_registro">
+        <div class="square_registro">
+            <h2>Registro</h2>
             <h2>(Solo para medicos)</h2>
             <br>
             <br>
@@ -34,14 +34,30 @@
                 <div class="formulario">
                     <label>Correo electronico:</label>
                     <br>
-                    <input placeholder="Ingresa tu correo" type="email" name="" id="correo_medico">
+                    <input placeholder="Ingresa tu correo" type="email" name="" id="correo_medico" required>
+                    <br>
+                    <label>Nombre:</label>
+                    <br>
+                    <input placeholder="Ingresa tu Nombre" type="text" name="" id="nombre_medico" required>
+                    <br>
+                    <label>Apellidos:</label>
+                    <br>
+                    <input placeholder="Ingresa tus Apellidos" type="text" name="" id="apellidos_medico" required>
+                    <br>
+                    <label>Cedula:</label>
+                    <br>
+                    <input placeholder="Ingresa tu Cedula" type="text" name="" id="cedula_medico" required>
+                    <br>
+                    <label>Numero:</label>
+                    <br>
+                    <input placeholder="Ingresa tu Numero" type="numer" name="" id="numero_medico" required>
                     <br>
                     <label>Password:</label>
                     <br>
-                    <input placeholder="Ingresa tu pass" type="password" name="" id="pass_medico">
+                    <input placeholder="Ingresa tu pass" type="password" name="" id="pass_medico" required> 
                     <br>
                     <br>
-                    <button onclick="logIn()">Entrar</button>
+                    <button onclick="register()">Entrar</button>
                 </div>
                 <div class="img_container">
                     <img src="assets/doctor.png">
@@ -50,7 +66,7 @@
             </div>
             <div class="register">
                 <br>
-                <label>Aun no tienes cuenta? Registrate <a href="registro_medico.html">aqui.</a></label>
+                <label>Aun no tienes cuenta? Registrate <a href="#registrate">aqui.</a></label>
             </div>
             
         </div>
@@ -58,6 +74,6 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="./js/assetsValidations.js"></script>
     <script src="./js/script.js"></script>
-    <script src="./js/login.js"></script>
+    <!--<script src="./js/login.js"></script>-->
 </body>
 </html>
