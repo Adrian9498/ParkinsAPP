@@ -1,6 +1,3 @@
-
-
-
 function showColocacion(element){
     
     const padre = element.parentNode;
@@ -16,7 +13,7 @@ function showColocacion(element){
         element.style.zIndex = 2;
         padre.style.display = 'inline';
         element.style.height = '100vh';
-        element.style.width = '100vw';
+        element.style.width = '93%';
         element.style.flexDirection = 'column';
         for(const child of element.children){
             child.style.display = 'flex';
@@ -48,7 +45,7 @@ function showSensores(element){
         element.style.zIndex = 2;
         padre.style.display = 'inline';
         element.style.height = '100vh';
-        element.style.width = '100vw';
+        element.style.width = '93%';
         element.style.flexDirection = 'column';
         for(const child of element.children){
             child.style.display = 'inline';
@@ -80,7 +77,7 @@ function showEjercicio(element){
         element.style.zIndex = 2;
         padre.style.display = 'inline';
         element.style.height = '100vh';
-        element.style.width = '100vw';
+        element.style.width = '93%';
         element.style.flexDirection = 'column';
         for(const child of element.children){
             child.style.display = 'inline';
@@ -112,7 +109,7 @@ function showonOff(element){
         element.style.zIndex = 2;
         padre.style.display = 'inline';
         element.style.height = '100vh';
-        element.style.width = '100vw';
+        element.style.width = '93%';
         element.style.flexDirection = 'column';
         for(const child of element.children){
             child.style.display = 'inline';
@@ -144,10 +141,10 @@ function showCalendario(element){
         element.style.zIndex = 2;
         padre.style.display = 'inline';
         element.style.height = '100vh';
-        element.style.width = '100vw';
+        element.style.width = '93%';
         element.style.flexDirection = 'column';
         for(const child of element.children){
-            child.style.display = 'inline';
+            child.style.display = 'flex';
         }
     }else{
         padre.style = '';

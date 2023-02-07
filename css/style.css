@@ -388,10 +388,27 @@ body{
     }
 }
 @media (max-width: 900px){
+    
+    .perifericos{
+        display: flex; 
+        flex-flow: row; 
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #img__sensor{
+        width: 90%;
+        height: 40%;
+    }
 
     #img__periferico{
-        width: 40%;
-        height:500%;
+        width: 50%;
+        height: 70%;
+    }
+
+    #img__periferico__datos{
+        width: 50%;
+        height: 70%;
     }
     
     .datos_medico{
@@ -470,10 +487,12 @@ body{
     .Title_Park{
         margin-right: 10%;
     }
+    
     .colocacion{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         cursor: pointer;
         width: 45%;
         padding: 15px;
@@ -559,6 +578,7 @@ body{
     .calendario{
         display: flex;
         flex-direction: row;
+        align-items: center;
         justify-content: center;
         cursor: pointer;
         width: 45%;
