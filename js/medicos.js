@@ -45,6 +45,17 @@ const pacientes = async () => {
         .catch( error => console.error('Error:', error))
         .then( data => {
             data.forEach(element => {
+                let cadencia = element.cadencia;
+                
+                let paso = element.paso;
+                
+                if(cadencia == null){
+                    cadencia = "Sin registro"
+                }
+
+                if(paso == null){
+                    paso = "Sin registro"
+                }
                 square.innerHTML += "<div id='paciente_square' class='paciente_square'>"+
                                         "<img src='assets/paciente.png' width='100vw'>"+
                                         "<br>"+
@@ -57,6 +68,10 @@ const pacientes = async () => {
                                         "<span>" + element.correo+ "</span>"+
                                         "<br>"+
                                         "<span>" + element.direccion+ "</span>"+
+                                        "<br>"+
+                                        "<span> Cadencia: " + cadencia+ "</span>"+
+                                        "<br>"+
+                                        "<span>Largo de paso: " +paso+ "</span>"+
                                     "</div>";
             });
         })
