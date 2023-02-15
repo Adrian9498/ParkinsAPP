@@ -147,6 +147,22 @@ async function mostarGraficas(clave){
                                 borderColor: '#f2ac41',
                                 backgroundColor: '#f2ac41',
                             }]
+                        },
+                        options:{
+                            scales:{
+                                y:{
+                                    title:{
+                                        display: true,
+                                        text: 'Angulos[°]'
+                                    } 
+                                },
+                                x:{
+                                    title:{
+                                        display: true,
+                                        text: 'Tiempo[s]'
+                                    } 
+                                }
+                            }
                         }
                     });
 
@@ -161,6 +177,22 @@ async function mostarGraficas(clave){
                                 borderColor: '#f28541',
                                 backgroundColor: '#f28541'
                             }]
+                        },
+                        options:{
+                            scales:{
+                                y:{
+                                    title:{
+                                        display: true,
+                                        text: 'Angulos[°]'
+                                    } 
+                                },
+                                x:{
+                                    title:{
+                                        display: true,
+                                        text: 'Tiempo[s]'
+                                    } 
+                                }
+                            }
                         }
                     });
 
@@ -176,6 +208,22 @@ async function mostarGraficas(clave){
                                 backgroundColor: '#50d136'
                                 
                             }]
+                        },
+                        options:{
+                            scales:{
+                                y:{
+                                    title:{
+                                        display: true,
+                                        text: 'Angulos[°]'
+                                    } 
+                                },
+                                x:{
+                                    title:{
+                                        display: true,
+                                        text: 'Tiempo[s]'
+                                    } 
+                                }
+                            }
                         }
                     });
 
@@ -191,6 +239,22 @@ async function mostarGraficas(clave){
                                 backgroundColor: '#1db331'
                                 
                             }]
+                        },
+                        options:{
+                            scales:{
+                                y:{
+                                    title:{
+                                        display: true,
+                                        text: 'Angulos[°]'
+                                    } 
+                                },
+                                x:{
+                                    title:{
+                                        display: true,
+                                        text: 'Tiempo[s]'
+                                    } 
+                                }
+                            }
                         }
                     });
 
@@ -206,6 +270,22 @@ async function mostarGraficas(clave){
                                 backgroundColor: '#36d1ba'
                                 
                             }]
+                        },
+                        options:{
+                            scales:{
+                                y:{
+                                    title:{
+                                        display: true,
+                                        text: 'Angulos[°]'
+                                    } 
+                                },
+                                x:{
+                                    title:{
+                                        display: true,
+                                        text: 'Tiempo[s]'
+                                    } 
+                                }
+                            }
                         }
                     });
 
@@ -220,6 +300,22 @@ async function mostarGraficas(clave){
                                 borderColor: '#368bd1',
                                 backgroundColor: '#368bd1'
                             }]
+                        },
+                        options:{
+                            scales:{
+                                y:{
+                                    title:{
+                                        display: true,
+                                        text: 'Angulos[°]'
+                                    } 
+                                },
+                                x:{
+                                    title:{
+                                        display: true,
+                                        text: 'Tiempo[s]'
+                                    } 
+                                }
+                            }
                         }
                     });
                     document.getElementById("start_button").click();
