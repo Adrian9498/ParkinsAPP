@@ -251,6 +251,61 @@ async function register(){
         .catch( error => console.error('Error:', error))
 }
 
+async function registerPaciente(){
+    let object = {};
+    datos = new FormData();
+    datos.append("correo",document.getElementById("correo_paciente").value);
+    datos.append("edad",document.getElementById("edad_paciente").value);
+    datos.append("nombre",document.getElementById("nombre_paciente").value);
+    datos.append("apellidos",document.getElementById("apellidos_paciente").value);
+    datos.append("direccion",document.getElementById("direccion_paciente").value);
+    datos.append("telefono",document.getElementById("numero_paciente").value);
+    datos.append("peso",document.getElementById("peso_paciente").value);
+    datos.append("estatura",document.getElementById("estatura_paciente").value);
+    datos.append("id_doctor",sessionStorage.getItem("id_medico"));
+
+    if(document.getElementById("correo_paciente").value == ""
+        ||document.getElementById("edad_paciente").value == ""
+        ||document.getElementById("nombre_paciente").value == ""
+        ||document.getElementById("apellidos_paciente").value == ""
+        ||document.getElementById("direccion_paciente").value == ""
+        ||document.getElementById("peso_paciente").value == ""
+        ||document.getElementById("estatura_paciente").value == ""
+        ||document.getElementById("numero_paciente").value == ""){
+        mostrarAlerta("Upps", "Revisa tus datos", "error");
+        return;
+    }
+
+    datos.forEach((value,key) => {
+        object[key] = value;
+    });
+
+    let jsona = JSON.stringify(object);
+    mostrarEspera("Iniciando sesión..");
+    await fetch("https://parkinsonapi-production.up.railway.app/api/createPaciente",{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body:jsona,
+    })
+        .then(res => res.json())
+        .catch( error => console.error('Error:', error))
+        .then( data => {
+
+            cerrarMensaje();
+            console.log(data.id_doctor);
+            
+            if(data.id_doctor){
+                mostrarAlerta("Info", "Se creo tu registro", "info");
+                window.location.href = 'medicos.html';
+                return;
+            }
+            mostrarAlerta("Upps", "Revisa tus datos", "error");
+        })
+        .catch( error => console.error('Error:', error))
+}
+
 isSessionOn();
 
 
