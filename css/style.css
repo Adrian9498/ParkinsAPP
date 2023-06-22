@@ -157,16 +157,18 @@ body{
 }
 
 #img__sensor{
-    width: 50%;
-    height: 40%;
+    width: 100%;
+    height: 70%;
 }
 
 .perifericos{
     display: flex; 
-    flex-flow: row; 
-    width: 100%; 
-    height: 40%; 
+    flex-flow: column;
+    font-size:20px; 
+    width: 100%;
+    height: 100%; 
     justify-content: center;
+    align-items: center;
 }
 
 #img__periferico{
@@ -215,7 +217,6 @@ body{
 
 .container3{
     width: 100%;
-    height: 100vh;
     padding-top: 2%;
     padding-bottom: 2%;
     display: flex;
@@ -391,7 +392,7 @@ body{
     
     .perifericos{
         display: flex; 
-        flex-flow: row; 
+        flex-flow: column; 
         align-items: center;
         justify-content: center;
     }
@@ -403,7 +404,7 @@ body{
     
     #img__sensor{
         width: 90%;
-        height: 40%;
+        height: 60%;
     }
 
     #img__periferico{
@@ -642,6 +643,10 @@ body{
         float: none;
         display: block;
         text-align: left;
+    }
+    #img__sensor{
+        width: 95%;
+        height: 50%;
     }
 }
 
