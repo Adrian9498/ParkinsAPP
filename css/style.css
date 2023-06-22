@@ -345,6 +345,23 @@ body{
     background-color: #32BEA6;
 }
 
+.registro_paciente{
+    width: 12vw;
+    height: 4vh;
+    border-radius: 5px;
+    border: 2px;
+    color: #D5E8DC;
+    font-size: 20px;
+    background-color: #32BEA6;
+}
+
+.registro_paciente:hover{
+    background-color: #65d8c5;
+    color: black;
+    cursor: pointer;
+    
+}
+
 .formulario button:hover{
     background-color: #7C7C7C;
     color:#D5E8DC;
@@ -369,6 +386,11 @@ body{
     height: 20vh;
     
 }
+
+#rodillaD{
+    
+}
+
 @media (max-width: 1560px){
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {

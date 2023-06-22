@@ -13,6 +13,10 @@ let graph4;
 let graph5;
 let graph6;
 
+const registrarPacientes = () => {
+    window.location = "registro.html"
+}
+
 const esMedico = () =>{
     const medico = sessionStorage.getItem('cedula_medico');
     

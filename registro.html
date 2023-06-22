@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ParkinsAPP - LogIn</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a  class="Title_Park"><h3>ParkinsAPP</h3></a>
+        <a href="index.html" >Inicio</a>
+        <a href="medicos.html" id="medicosBar">Medicos</a>
+        <a href="index.html" id="close" onclick="closeSession()">Cerrar Sesion</a>
+        <a href="#" class="active" id="loginBar">LogIn</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="loginForm_registro">
+        <div class="square_registro">
+            <h2>Registro</h2>
+            <h2>(Solo para medicos)</h2>
+            <br>
+            <br>
+            <div class="body_form">
+                <div class="formulario">
+                    
+                    <label>Nombre:</label>
+                    <br>
+                    <input placeholder="Ingresa su Nombre" type="text" name="" id="nombre_paciente" required>
+                    <br>
+                    <label>Apellidos:</label>
+                    <br>
+                    <input placeholder="Ingresa su Apellidos" type="text" name="" id="apellidos_paciente" required>
+                    <br>
+                    <label>Edad:</label>
+                    <br>
+                    <input placeholder="Ingresa su edad" type="text" name="" id="edad_paciente" required>
+                    <br>
+                    <label>Correo electronico:</label>
+                    <br>
+                    <input placeholder="Ingresa su correo" type="email" name="" id="correo_paciente" required>
+                    <br>
+                    <label>Numero:</label>
+                    <br>
+                    <input placeholder="Ingresa su Numero" type="numer" name="" id="numero_paciente" required>
+                    <br>
+                    <label>Direccion:</label>
+                    <br>
+                    <input placeholder="Ingresa su direccion" type="text" name="" id="direccion_paciente" required> 
+                    <br>
+                    <label>Peso:</label>
+                    <br>
+                    <input placeholder="Ingresa su Peso" type="numer" name="" id="peso_paciente" required>
+                    <br>
+                    <label>Estatura:</label>
+                    <br>
+                    <input placeholder="Ingresa su Estatura" type="numer" name="" id="estatura_paciente" required>
+                    <br>
+                    <br>
+                    <button onclick="registerPaciente()">Entrar</button>
+                </div>
+                <div class="img_container">
+                    <img src="assets/doctor.png">
+                </div>
+                
+            </div>
+            <div class="register">
+                <br>
+                
+            </div>
+            
+        </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="./js/assetsValidations.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/registro.js"></script>
+    <!--<script src="./js/login.js"></script>-->
+</body>
+</html>
