@@ -166,6 +166,19 @@ async function mostarGraficas(clave){
                                         text: 'Tiempo[s]'
                                     } 
                                 }
+                            },
+                            plugins: {
+                                zoom: {
+                                    zoom: {
+                                        wheel: {
+                                            enabled: true,
+                                        },
+                                        pinch: {
+                                            enabled: true
+                                        },
+                                        mode: 'xy',
+                                    }
+                                }
                             }
                         }
                     });
@@ -195,6 +208,19 @@ async function mostarGraficas(clave){
                                         display: true,
                                         text: 'Tiempo[s]'
                                     } 
+                                }
+                            },
+                            plugins: {
+                                zoom: {
+                                    zoom: {
+                                        wheel: {
+                                            enabled: true,
+                                        },
+                                        pinch: {
+                                            enabled: true
+                                        },
+                                        mode: 'xy',
+                                    }
                                 }
                             }
                         }
@@ -227,6 +253,19 @@ async function mostarGraficas(clave){
                                         text: 'Tiempo[s]'
                                     } 
                                 }
+                            },
+                            plugins: {
+                                zoom: {
+                                    zoom: {
+                                        wheel: {
+                                            enabled: true,
+                                        },
+                                        pinch: {
+                                            enabled: true
+                                        },
+                                        mode: 'xy',
+                                    }
+                                }
                             }
                         }
                     });
@@ -257,6 +296,19 @@ async function mostarGraficas(clave){
                                         display: true,
                                         text: 'Tiempo[s]'
                                     } 
+                                }
+                            },
+                            plugins: {
+                                zoom: {
+                                    zoom: {
+                                        wheel: {
+                                            enabled: true,
+                                        },
+                                        pinch: {
+                                            enabled: true
+                                        },
+                                        mode: 'xy',
+                                    }
                                 }
                             }
                         }
@@ -289,6 +341,19 @@ async function mostarGraficas(clave){
                                         text: 'Tiempo[s]'
                                     } 
                                 }
+                            },
+                            plugins: {
+                                zoom: {
+                                    zoom: {
+                                        wheel: {
+                                            enabled: true,
+                                        },
+                                        pinch: {
+                                            enabled: true
+                                        },
+                                        mode: 'xy',
+                                    }
+                                }
                             }
                         }
                     });
@@ -318,6 +383,19 @@ async function mostarGraficas(clave){
                                         display: true,
                                         text: 'Tiempo[s]'
                                     } 
+                                }
+                            },
+                            plugins: {
+                                zoom: {
+                                    zoom: {
+                                        wheel: {
+                                            enabled: true,
+                                        },
+                                        pinch: {
+                                            enabled: true
+                                        },
+                                        mode: 'xy',
+                                    }
                                 }
                             }
                         }
